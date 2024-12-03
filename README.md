@@ -2,15 +2,6 @@
 
 This repository provides scripts and example data for calculating and visualizing selfing rates in time with eSMC2 and from heterozygosity data generated using `vcftools`. The selfing rate is computed using the formula from **Nordborg (1999)**, and a boxplot is generated to compare selfing rates across different populations and chromosomes.
 
-## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Dependencies](#dependencies)
-3. [Input File Format](#input-file-format)
-4. [R Script Workflow](#r-script-workflow)
-5. [Example Plot](#example-plot)
-6. [References](#references)
-
 ## Introduction
 
 Selfing rates provide insights into the reproductive systems of populations. I have prepared a `.pdf` file containing the exact workflow for eSMC2. 
@@ -20,9 +11,7 @@ The workflow based on heterozygosity includes:
 - Extracting heterozygosity data using `vcftools`.
 - Calculating selfing rates using the formula:
 
-\[
-\text{Selfing Rate} = \frac{2F}{1+F}
-\]
+Selfing Rate = (2F) / (1 + F)
 
 - Visualizing the results with a boxplot.
 
