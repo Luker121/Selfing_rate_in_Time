@@ -1,6 +1,6 @@
-# Selfing Rate Calculation and Visualization
+# Selfing Rate (in Time) with eSMC2 and from heterozygosity calculation
 
-This repository provides scripts and example data for calculating and visualizing selfing rates from heterozygosity data generated using `vcftools`. The selfing rate is computed using the formula from **Nordborg (1999)**, and a boxplot is generated to compare selfing rates across different populations and chromosomes.
+This repository provides scripts and example data for calculating and visualizing selfing rates in time with eSMC2 and from heterozygosity data generated using `vcftools`. The selfing rate is computed using the formula from **Nordborg (1999)**, and a boxplot is generated to compare selfing rates across different populations and chromosomes.
 
 ## Table of Contents
 
@@ -13,9 +13,10 @@ This repository provides scripts and example data for calculating and visualizin
 
 ## Introduction
 
-Selfing rates provide insights into the reproductive systems of populations. This analysis begins with heterozygosity data obtained from `vcftools`, calculates selfing rates, and visualizes the differences between populations across chromosomes.
+Selfing rates provide insights into the reproductive systems of populations. I have prepared a `.pdf` file containing the exact workflow for eSMC2. 
+As another option we could calculate the selfing rate based on the expected vs. observed heterozygosity obtained from `vcftools`.
 
-The workflow includes:
+The workflow based on heterozygosity includes:
 - Extracting heterozygosity data using `vcftools`.
 - Calculating selfing rates using the formula:
 
@@ -79,7 +80,7 @@ library(ggplot2)
 library(cowplot)
 
 # Load the heterozygosity data
-het_all_together <- fread("combined_heterozygosity_introsRem.txt")
+het_all_together <- fread("chrom1")
 
 # Calculate selfing rate
 het_all_together$selfing_rate <- (2 * (het_all_together$F)) / (1 + het_all_together$F) 
@@ -99,7 +100,7 @@ print(p2)
 ### Running the Script
 
 1. Save the script as `selfing_rate_plot.R`.
-2. Place your heterozygosity data file (`combined_heterozygosity_introsRem.txt`) in the same directory.
+2. Place your heterozygosity data file (`chrom1`) in the same directory.
 3. Run the script in R:
 
 ```R
@@ -114,6 +115,8 @@ The script generates a boxplot that compares selfing rates between populations a
 - **X-axis**: Chromosome.
 - **Y-axis**: Selfing rate.
 - **Colors**: Represent different populations.
+
+![Selfing Rate Boxplot](chrom1.png)
 
 ## References
 
