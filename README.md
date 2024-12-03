@@ -46,7 +46,7 @@ This creates a file with the following columns:
 - **N_SITES**: Total number of sites.
 - **F**: Inbreeding coefficient.
 
-An example input file (`combined_heterozygosity_introsRem.txt`) is included in this repository.
+An example input file (`chrom1`) is included in this repository.
 
 ## R Script Workflow
 
@@ -58,8 +58,6 @@ The script:
 3. Creates a boxplot comparing selfing rates across populations.
 
 ### Script
-
-The script is provided in `selfing_rate_plot.R`:
 
 ```r
 # Load required libraries
@@ -84,16 +82,6 @@ p2 <- ggplot(het_all_together, aes(x = Chromosome, y = as.numeric(selfing_rate),
 
 # Display the plot
 print(p2)
-```
-
-### Running the Script
-
-1. Save the script as `selfing_rate_plot.R`.
-2. Place your heterozygosity data file (`chrom1`) in the same directory.
-3. Run the script in R:
-
-```R
-source("selfing_rate_plot.R")
 ```
 
 ## Example Plot
